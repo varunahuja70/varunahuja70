@@ -193,8 +193,8 @@ def render(data):
 
 
 if __name__ == "__main__":
-    data = json.load(open(IN_PATH))
+    data = json.load(open(IN_PATH, encoding="utf-8"))
     svg = render(data)
-    with open(OUT_PATH, "w") as f:
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"wrote {OUT_PATH} ({len(svg)} bytes)")
